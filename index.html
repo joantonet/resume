@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jo Antonette Segador — AI Design &amp; Content Systems Specialist</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f0f0ec;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #222;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  /* ── WIGGLE EMOJI ── */
+  @keyframes wiggle {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(20deg); }
+    30%  { transform: rotate(-15deg); }
+    45%  { transform: rotate(14deg); }
+    60%  { transform: rotate(-10deg); }
+    75%  { transform: rotate(6deg); }
+    90%  { transform: rotate(-4deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .wiggle {
+    display: inline-block;
+    animation: wiggle 1.4s ease infinite;
+    transform-origin: 70% 70%;
+  }
+
+  /* ── CALLOUT BOX (shared style) ── */
+  .callout {
+    background: #edf7f1;
+    border-left: 3px solid #3a7d4f;
+    padding: 13px 18px;
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .callout .callout-label {
+    font-weight: 700;
+    color: #3a7d4f;
+  }
+
+  /* ── PAGE WRAP ── */
+  .page-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* ── GREETING AREA ── */
+  .greeting-area {
+    margin-bottom: 16px;
+  }
+
+  .greeting-btn-wrap {
+    margin-top: 10px;
+  }
+
+  .greeting-btn {
+    display: inline-block;
+    background: #3a7d4f;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .greeting-btn:hover { background: #2d6040; }
+
+  /* ── CARD ── */
+  .card {
+    background: #fff;
+    padding: 52px 64px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 6px;
+  }
+
+  .header .subtitle {
+    color: #3a7d4f;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .header .contacts {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.9;
+  }
+
+  .header .contacts a { color: #3a7d4f; text-decoration: none; }
+  .header .contacts a:hover { text-decoration: underline; }
+  .sep { color: #bbb; margin: 0 6px; }
+
+  /* ── DIVIDER ── */
+  hr {
+    border: none;
+    border-top: 1.5px solid #3a7d4f;
+    margin: 24px 0;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 28px; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3a7d4f;
+    margin-bottom: 12px;
+  }
+
+  .profile-text {
+    font-size: 0.92rem;
+    color: #333;
+    line-height: 1.75;
+  }
+
+  /* ── SKILLS ── */
+  .skills p {
+    font-size: 0.91rem;
+    color: #333;
+    margin-bottom: 6px;
+    line-height: 1.65;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item { margin-bottom: 22px; }
+
+  .exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .exp-title { font-weight: 700; font-size: 0.93rem; color: #111; }
+  .exp-company { font-size: 0.88rem; color: #555; }
+  .exp-date { font-size: 0.83rem; color: #888; white-space: nowrap; }
+
+  .exp-item ul { padding-left: 16px; }
+
+  .exp-item li {
+    font-size: 0.89rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 3px;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .edu-degree { font-weight: 700; font-size: 0.91rem; }
+  .edu-school { font-size: 0.88rem; color: #555; }
+  .edu-year { font-size: 0.85rem; color: #888; white-space: nowrap; }
+
+  .download-btn {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #3a7d4f;
+    text-decoration: none;
+    border: 1.5px solid #3a7d4f;
+    padding: 8px 20px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .download-btn:hover { background: #3a7d4f; color: #fff; }
+
+  .download-row {
+    text-align: right;
+    margin-bottom: 24px;
+  }
+    .card { padding: 36px 24px; }
+    .exp-meta { flex-direction: column; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- GREETING CALLOUT -->
+  <div class="greeting-area">
+    <div class="callout">
+      <span class="wiggle">👋</span> <span class="callout-label">Hi!</span> &nbsp;I heard you guys are hiring, and I thought I'd put together something more useful than a plain PDF. Below is my resume — and you can also check out a full content sample I put together to show what a real deliverable from me actually looks like.
+    </div>
+    <div class="greeting-btn-wrap">
+      <a href="blog.html" class="greeting-btn">View Sample Work &rarr;</a>
+    </div>
+  </div>
+
+  <!-- RESUME CARD -->
+  <div class="card">
+
+    <div class="header">
+      <h1>Jo Antonette Segador</h1>
+      <p class="subtitle">AI Design &amp; Content Systems Specialist</p>
+      <p class="contacts">
+        <a href="https://www.linkedin.com/in/joantonettesegador/" target="_blank">linkedin.com/in/joantonettesegador</a>
+        <span class="sep">·</span>
+        joanton.segador@gmail.com
+        <br>
+        SEO Portfolio: <a href="https://joanton.com/seo/" target="_blank">joanton.com/seo</a>
+        <span class="sep">·</span>
+        Design Portfolio: <a href="https://joanton.com/design" target="_blank">joanton.com/design</a>
+      </p>
+    </div>
+
+    <hr>
+
+    <div class="download-row">
+      <a href="resume.pdf" download="Jo_Antonette_Segador_Resume.pdf" class="download-btn">⬇ Download Resume</a>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Profile</p>
+      <p class="profile-text">Multidisciplinary creative with 6+ years across 3D animation, character art, graphic design, and AI-driven content systems. I worked on One Piece, Dragon Ball Super, and Saint Seiya at Toei Animation under Japanese CG supervisors. Now applying that visual-first thinking to AI design workflows, video editing, brand content, and scalable copy systems — deploying AI tools thoughtfully across design, writing, and production pipelines. I also run a YouTube channel as a creative hobby and created creative workflows to streamline my faceless channel.</p>
+    </div>
+
+    <hr>
+
+    <div class="section skills">
+      <p class="section-label">Core Skills</p>
+      <p><strong>AI Design, Video &amp; Content:</strong> Fast AI-assisted video editing for content uploads, Adobe Creative Suite, Canva, CapCut, Brand Asset Creation, Visual Direction, Layout &amp; Composition, Graphic Design, Copy at Scale, Blog &amp; Web Copy</p>
+      <p><strong>Automation &amp; Systems:</strong> AirOps Pipeline Architecture, Prompt Engineering, Content Refresh &amp; QA Workflows, Brand Voice Preservation, SEO Content Systems</p>
+      <p><strong>Creative Production:</strong> 3D Modeling &amp; Animation, Character Art, Autodesk Maya, ZBrush, Unreal Engine, Pixotope VR</p>
+      <p><strong>Tools:</strong> Figma, Adobe Creative Suite, Canva, Kittl, AirOps, Semrush, Webflow, WordPress, Squarespace, Weavy, ComfyUI, Descript, CapCut, Google Workspace</p>
+    </div>
+
+    <hr>
+
+    <div class="section">
+      <p class="section-label">Professional Experience</p>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div>
+            <span class="exp-title">Marketing Manager Lead</span>
+            <span class="exp-company"> &nbsp;·&nbsp; WOKEN &nbsp;·&nbsp; Remote</span>
+          </div>
+          <span class="exp-date">2025</span>
+        </div>
+        <ul>
+          <li>Design brand assets, social media visuals, and campaign creatives, maintaining a cohesive visual identity across all channels.</li>
+          <li>Create and edit fast-turnaround AI-assisted video content for content uploads using Adobe Creative Suite, Canva, CapCut, and related production tools.</li>
+          <li>Develop and execute SEO content strategies including keyword research, on-page optimization, and content refresh workflows using AirOps automation.</li>
+          <li>Drive LinkedIn content and community engagement, building audience growth loops and nurturing prospective clients.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div>
+            <span class="exp-title">Co-founder / AI SEO Systems Architect</span>
+            <span class="exp-company"> &nbsp;·&nbsp; Butterflowy &nbsp;·&nbsp; Delaware, USA</span>
+          </div>
+          <span class="exp-date">Nov 2024</span>
+        </div>
+        <ul>
+          <li>Architected an AI-driven content engine that publishes and refreshes high-quality SEO pieces at scale with under 2 hours of human touch time per week.</li>
+          <li>Standardized on-page SEO and visual asset production (hero images, captions, alt text) for priority URLs, enforcing design-consistent CMS QA checklists.</li>
+          <li>Built internal-linking and hub maintenance systems: hub/spoke maps, cross-link injections, link-integrity checks, and validated schema markup.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div>
+            <span class="exp-title">AI Solutions Architect (Contract)</span>
+            <span class="exp-company"> &nbsp;·&nbsp; AirOps &nbsp;·&nbsp; San Francisco, USA</span>
+          </div>
+          <span class="exp-date">Jan – Apr 2025</span>
+        </div>
+        <ul>
+          <li>Built content refresh and creation pipelines for Docebo, Hypermode, Lionhead, and SEO Notebook, supporting AI-assisted content operations and editorial QA workflows.</li>
+          <li>Created a "Facts Updater" workflow that flags declining URLs, grabs updated stats and sources, and rewrites sections while preserving brand voice — cutting editorial audit time by 70%.</li>
+          <li>Automated the full content loop (keyword strategy → outline → draft → fact-check → publish) inside AirOps, reducing turnaround from 5 days to 24 hours.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div>
+            <span class="exp-title">3D Generalist &amp; AI Design Lead</span>
+            <span class="exp-company"> &nbsp;·&nbsp; SolidLeisure Solutions Inc.</span>
+          </div>
+          <span class="exp-date">Sep 2022</span>
+        </div>
+        <ul>
+          <li>Transitioned into a hybrid AI design role, producing graphic design assets and integrating AI-assisted workflows into creative production.</li>
+          <li>Established and trained staff on an Unreal Engine-based production pipeline, elevating visual output and operational efficiency.</li>
+          <li>Pioneered and operated Pixotope VR in a live demo that secured executive buy-in, leading to adoption of live 3D VR shows.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div>
+            <span class="exp-title">3D Character Artist</span>
+            <span class="exp-company"> &nbsp;·&nbsp; Mighty Jaxx &nbsp;·&nbsp; Singapore</span>
+          </div>
+          <span class="exp-date">Sep 2024</span>
+        </div>
+        <ul>
+          <li>Created production-ready 3D figurine models for collectible toy products, ensuring accurate topology and fidelity to original concept art.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div>
+            <span class="exp-title">3D Creative Director</span>
+            <span class="exp-company"> &nbsp;·&nbsp; Fullmetal Productions</span>
+          </div>
+          <span class="exp-date">Mar – Sep 2022</span>
+        </div>
+        <ul>
+          <li>Led game advertisement projects for Angry Birds 2, Streetball, and Yu-Gi-Oh!, overseeing artistic direction, lighting, and rendering.</li>
+          <li>Supervised post-production and visual quality, ensuring client deliverables met creative standards and deadlines.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div>
+            <span class="exp-title">3D Graphic Artist</span>
+            <span class="exp-company"> &nbsp;·&nbsp; Toei Animation Philippines Inc.</span>
+          </div>
+          <span class="exp-date">Jun 2019 – Feb 2022</span>
+        </div>
+        <ul>
+          <li>Worked on production assets under Japanese CG supervisors, building a rigorous foundation in topology, UV setup, and texturing.</li>
+          <li>Produced rig-ready props and character models for One Piece 3D, Netflix's Saint Seiya, and Dragon Ball Super: Super Hero under strict production deadlines.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="section">
+      <p class="section-label">Education</p>
+      <div class="edu-row">
+        <div>
+          <p class="edu-degree">Bachelor of Science in Digital Illustration and Animation</p>
+          <p class="edu-school">Ateneo de Naga University, Naga City, Bicol</p>
+        </div>
+        <span class="edu-year">March 2019</span>
+      </div>
+    </div>
+
+  </div><!-- /card -->
+</div><!-- /page-wrap -->
+
+</body>
+</html>
