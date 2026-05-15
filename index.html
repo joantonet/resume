@@ -60,8 +60,12 @@
     margin-bottom: 16px;
   }
 
-  .greeting-btn-wrap {
+  .greeting-btn-row {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
   }
 
   .greeting-btn {
@@ -79,10 +83,29 @@
 
   .greeting-btn:hover { background: #2d6040; }
 
+  .download-btn-top {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #3a7d4f;
+    text-decoration: none;
+    border: 1.5px solid #3a7d4f;
+    padding: 9px 20px;
+    transition: background 0.15s, color 0.15s;
+    cursor: pointer;
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .download-btn-top:hover { background: #3a7d4f; color: #fff; }
+
   /* ── CARD ── */
   .card {
     background: #fff;
     padding: 52px 64px;
+  }
   }
 
   /* ── HEADER ── */
@@ -187,29 +210,13 @@
   .edu-school { font-size: 0.88rem; color: #555; }
   .edu-year { font-size: 0.85rem; color: #888; white-space: nowrap; }
 
-  .download-btn {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #3a7d4f;
-    text-decoration: none;
-    border: 1.5px solid #3a7d4f;
-    padding: 8px 20px;
-    transition: background 0.15s, color 0.15s;
-  }
-
-  .download-btn:hover { background: #3a7d4f; color: #fff; }
-
-  .download-row {
-    text-align: right;
-    margin-bottom: 24px;
-  }
+  @media (max-width: 600px) {
     .card { padding: 36px 24px; }
     .exp-meta { flex-direction: column; gap: 2px; }
+    .greeting-btn-row { flex-direction: column; align-items: flex-start; }
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -220,8 +227,9 @@
     <div class="callout">
       <span class="wiggle">👋</span> <span class="callout-label">Hi!</span> &nbsp;I heard you guys are hiring, and I thought I'd put together something more useful than a plain PDF. Below is my resume — and you can also check out a full content sample I put together to show what a real deliverable from me actually looks like.
     </div>
-    <div class="greeting-btn-wrap">
+    <div class="greeting-btn-row">
       <a href="blog.html" class="greeting-btn">View Sample Work &rarr;</a>
+      <button class="download-btn-top" onclick="downloadResume()">⬇ Download Resume</button>
     </div>
   </div>
 
@@ -234,7 +242,7 @@
       <p class="contacts">
         <a href="https://www.linkedin.com/in/joantonettesegador/" target="_blank">linkedin.com/in/joantonettesegador</a>
         <span class="sep">·</span>
-        joanton.segador@gmail.com
+        <a href="mailto:joanton.segador@gmail.com">joanton.segador@gmail.com</a>
         <br>
         SEO Portfolio: <a href="https://joanton.com/seo/" target="_blank">joanton.com/seo</a>
         <span class="sep">·</span>
@@ -243,10 +251,6 @@
     </div>
 
     <hr>
-
-    <div class="download-row">
-      <a href="resume.pdf" download="Jo_Antonette_Segador_Resume.pdf" class="download-btn">⬇ Download Resume</a>
-    </div>
 
     <div class="section">
       <p class="section-label">Profile</p>
@@ -379,7 +383,7 @@
       <div class="edu-row">
         <div>
           <p class="edu-degree">Bachelor of Science in Digital Illustration and Animation</p>
-          <p class="edu-school">Ateneo de Naga University, Naga City, Bicol</p>
+          <p class="edu-school">Ateneo de Naga University</p>
         </div>
         <span class="edu-year">March 2019</span>
       </div>
@@ -388,5 +392,18 @@
   </div><!-- /card -->
 </div><!-- /page-wrap -->
 
+<script>
+  function downloadResume() {
+    var card = document.querySelector('.card');
+    var opt = {
+      margin:       [10, 10, 10, 10],
+      filename:     'Jo_Antonette_Segador_Resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(card).save();
+  }
+</script>
 </body>
 </html>
