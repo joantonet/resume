@@ -216,7 +216,6 @@
     .greeting-btn-row { flex-direction: column; align-items: flex-start; }
   }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -229,7 +228,7 @@
     </div>
     <div class="greeting-btn-row">
       <a href="blog.html" class="greeting-btn">View Sample Work &rarr;</a>
-      <button class="download-btn-top" onclick="downloadResume()">⬇ Download Resume</button>
+      <a href="Jo_Antonette_Segador_Resume.pdf" download class="download-btn-top">⬇ Download Resume</a>
     </div>
   </div>
 
@@ -385,25 +384,11 @@
           <p class="edu-degree">Bachelor of Science in Digital Illustration and Animation</p>
           <p class="edu-school">Ateneo de Naga University</p>
         </div>
-        <span class="edu-year">March 2019</span>
       </div>
     </div>
 
   </div><!-- /card -->
 </div><!-- /page-wrap -->
 
-<script>
-  function downloadResume() {
-    var card = document.querySelector('.card');
-    var opt = {
-      margin:       [10, 10, 10, 10],
-      filename:     'Jo_Antonette_Segador_Resume.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-    html2pdf().set(opt).from(card).save();
-  }
-</script>
 </body>
 </html>
